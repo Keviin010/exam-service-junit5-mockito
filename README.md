@@ -34,5 +34,3 @@ mvn test
 
 ## Autor
 Kevin R.
-
-Cristian Colorado
