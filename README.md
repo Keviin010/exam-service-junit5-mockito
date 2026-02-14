@@ -33,4 +33,4 @@ Ejecutar pruebas:
 mvn test
 
 ## Autor
-Kevin R.
+Kevin Royo
