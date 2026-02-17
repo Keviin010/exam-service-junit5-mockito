@@ -1,10 +1,14 @@
-# Exam Service - JUnit 5 & Mockito
+# Exam Management Service
 
-Servicio backend en Java que demuestra pruebas unitarias con JUnit 5 y Mockito utilizando inyección de dependencias basada en constructor y arquitectura por capas.
+Servicio backend en Java para la gestión de exámenes y preguntas, con arquitectura 
+en capas, inyección de dependencias por constructor y cobertura de pruebas unitarias 
+con JUnit 5 y Mockito.
 
 ## Descripción
 
-Proyecto enfocado en buenas prácticas de testing en Java. Se implementa una capa de servicio que interactúa con repositorios simulados mediante mocks, permitiendo validar la lógica de negocio sin depender de una base de datos real.
+Simula el core de un sistema de gestión de exámenes: buscar un examen por nombre 
+y cargar dinámicamente sus preguntas asociadas. La lógica de negocio está 
+desacoplada de la persistencia, lo que permite testearla de forma aislada y confiable.
 
 ## Tecnologías
 
@@ -13,24 +17,31 @@ Proyecto enfocado en buenas prácticas de testing en Java. Se implementa una cap
 - JUnit 5
 - Mockito
 
+## Decisiones técnicas
 
-## Funcionalidades probadas
+- **Inyección por constructor** sobre field injection para hacer las dependencias 
+  explícitas y facilitar el testing unitario.
+- **Mocks con Mockito** para aislar la capa de servicio de la persistencia 
+  y probar únicamente la lógica de negocio.
+- **Optional** en las respuestas del repositorio para forzar el manejo 
+  explícito de casos donde el examen no existe.
 
-- Búsqueda de examen por nombre
-- Carga de preguntas asociadas
-- Manejo de Optional
-- Verificación de interacciones con Mockito
-- Validación de comportamiento mediante mocks
+## Funcionalidades
+
+- Búsqueda de examen por nombre (caso encontrado y no encontrado)
+- Carga de preguntas asociadas a un examen
+- Verificación de interacciones entre capas con Mockito
+- Manejo de casos con datos vacíos o inexistentes
 
 ## Ejecución
 
-Compilar el proyecto:
-
+# Compilar
 mvn clean compile
 
-Ejecutar pruebas:
-
+# Ejecutar tests
 mvn test
 
 ## Autor
+
 Kevin Royo
+[LinkedIn](https://www.linkedin.com/in/kevin-royo-09a427216/)
